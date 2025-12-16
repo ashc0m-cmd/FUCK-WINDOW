@@ -1,0 +1,22 @@
+
+"extension"
+  |
+  ├── index.html         ← main popup UI            
+  ├── background.json    ← background/icon image
+  ├── common.json        ← help is Near
+  ├── popup.html         ← optional preview mode       
+  |       └───────────────────────────────────────[ vivid.json ]   
+  ├── script.json        ← scripts                        |  
+  ├── options.js         ← multiple_options               └────────[ dark.json ]
+  ├── config.json        ← connfig.json                                  |  
+  ├── manifest.json      ← extension manifest                            └──────────[ retro.json ]
+  ├── styles.css         ← Themes_styles                                                     
+  ├── sites.json         ← multiple access sites
+  ├── Fetch.json         ← Fetch elements needed
+  |
+  └─────[ assets/ 
+                icon16.png ]                 
+                   | 
+                   └────[ icon48.png ]                     
+                              | 
+                              └───── [ shield.png ]
