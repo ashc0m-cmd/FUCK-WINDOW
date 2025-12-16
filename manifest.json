@@ -1,0 +1,64 @@
+{
+  {
+    "manifest.json": 3,
+    "name": "Premium Access Theme Switcher",
+    "short_name": "Bypass limits, boost visibility",
+    "description": "Bypass all_urls' Paywalls",
+    "version": "1.8.0"
+  }
+}
+{
+  {
+  "icons":[
+          "images/icon16.png"
+          "images/icon48.png"
+          "shield.png"
+        ]
+    }    
+}  
+          "action": {
+    "default_popup.html": "src/html/popup.html",
+    "default_icon": {
+      "128": "src/icons/shield.png"
+    }
+  },
+  "background.json": {
+    "service_worker": "src/js/background.json",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+  },
+  "options_ui": {
+    "page": "src/html/options.js",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "cookies",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+  "homepage_url": "https://github.com/iamadamdev/bypass-paywalls-chrome/blob/master/README.md",
+  "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/src/updates/updates.xml",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
+   {
+    "scripts.json": [
+      "src/js/manifest.json,
+      "src/js/config.json",
+      "src/js/scripts.json",
+      "src/js/background.json",
+      "src/js/Fetch.json",
+      "src/js/sites.json",
+      "src/js/index.json",
+      "src/js/option.js",
+      "src/js/styles.css",
+      "src/js/shield.png",
+      "src/js/README.md",
+      "src/js/updates.json,
+    ]
+  }
+} 
