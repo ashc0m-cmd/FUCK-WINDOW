@@ -1,64 +1,70 @@
 {
-  {
-    "manifest.json": 3,
-    "name": "Premium Access Theme Switcher",
-    "short_name": "Bypass limits, boost visibility",
-    "description": "Bypass all_urls' Paywalls",
-    "version": "1.8.0"
-  }
-}
-{
-  {
-  "icons":[
-          "images/icon16.png"
-          "images/icon48.png"
-          "shield.png"
-        ]
-    }    
-}  
-          "action": {
-    "default_popup.html": "src/html/popup.html",
+  "name": "Premium Access Theme Switcher",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Bypass paywalls on selected sites",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/shield.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
     "default_icon": {
-      "128": "src/icons/shield.png"
+      "128": "icons/icon128.png"
     }
   },
-  "background.json": {
-    "service_worker": "src/js/background.json",
+  "background": {
+    "service_worker": "background.js",
     "type": "module"
   },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
-  },
-  "options_ui": {
-    "page": "src/html/options.js",
-    "open_in_tab": true
-  },
-  "permissions": [
-    "cookies",
-    "storage",
-    "webRequest",
-    "webRequestBlocking"
-  ],
-  "host_permissions": [
-    "<all_urls>"
+  "permissions": [ "storage" ],
+  "host_permissions": [ "<all_urls>" ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.seekingalpha.com/*",
+        "*://*.propmoney.com.au/*",
+        "*://*.chemistwarehouse.com/*",
+        "*://*.archive.org/*",
+        "*://*.elmundo.es/*",
+        "*://*.scmp.com/*",
+        "*://*.nytimes.com/*",
+        "*://*.vapiai.com/*",
+        "*://*.medium.com/*",
+        "*://*.bloomberg.com/*",
+        "*://*.ft.com/*",
+        "*://*.latimes.com/*",
+        "*://*.theguardian.com/*",
+        "*://*.wsj.com/*",
+        "*://*.aliexpress.com/*",
+        "*://*.facebook.com/*",
+        "*://*.alibaba.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.instagram.com/*",
+        "*://*.snapchat.com/*",
+        "*://*.chatgpt.com/*",
+        "*://*.temu.com/*",
+        "*://*.shop.com/*",
+        "*://*.waybackmachine.com/*",
+        "*://*.dynamed.com/*",
+        "*://*.glassdoor.com/*",
+        "*://*.medscape.com/*",
+        "*://*.hbrchina.org/*",
+        "*://*.inc.com/*",
+        "*://*.interest.co.nz/*",
+        "*://*.investorschronicle.co.uk/*",
+        "*://*.df.cl/*",
+        "*://*.editorialedomani.it/*",
+        "*://*.britannica.com/*",
+        "*://*.estadao.com.br/*",
+        "*://*.examiner.com.au/*",
+        "*://*.expansion.com/*",
+        "*://*.fnlondon.com/*",
+        "*://*.financialpost.com/*"
+      ],
+      "js": [ "content.js" ],
+      "run_at": "document_idle"
+    }
   ]
-  "homepage_url": "https://github.com/iamadamdev/bypass-paywalls-chrome/blob/master/README.md",
-  "update_url": "https://raw.githubusercontent.com/iamadamdev/bypass-paywalls-chrome/master/src/updates/updates.xml",
-  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3PRmcRnHFZwHUlCgoTAdBjc9nUjmJo8l8kvkl/OZV6biZFAGUQGdxF1xoGhRccWA7qfQrZdPwcM1VQoVS/1F+87XiutKTe/HNsTAFvOcVS0tjCSH6DOHpewkMUBZujwTIeo7UXUVmCPQ1UbVd6m8KmHYtSHYlaX0uXRcguWhLmO5hASxw4onvAD0uql/t/ntxsIATwn4hVApg0VZhy0QAbMany8/5ByKPa19mCQwsIdRkcpG+PNHTLWPDgeGoDL7S0DxIduraRhTlrDX/zy5ETu6NWq6r+/jRzmXAjx+vSDCU5Ps2YG8QwdCL4Zl+CNVdQrnqz4X1zfPFJ1FFmUSpwIDAQAB",
-   {
-    "scripts.json": [
-      "src/js/manifest.json,
-      "src/js/config.json",
-      "src/js/scripts.json",
-      "src/js/background.json",
-      "src/js/Fetch.json",
-      "src/js/sites.json",
-      "src/js/index.json",
-      "src/js/option.js",
-      "src/js/styles.css",
-      "src/js/shield.png",
-      "src/js/README.md",
-      "src/js/updates.json,
-    ]
-  }
-} 
+}

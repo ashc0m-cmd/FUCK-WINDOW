@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Premium Access Theme Switcher</title>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+    <div id="app" class="popup">
+        <header class="popup-header">
+            <div class="shield-wrapper">
+                <div id="shield-icon" class="shield-icon shield-active"></div>
+            </div>
+            <div class="title-block">
+                <h1 class="title">Premium Access</h1>
+                <p class="subtitle">Theme Switcher & Paywall Control</p>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Theme</h2>
+            <div class="field">
+                <label for="theme-select">Current theme</label>
+                <select id="theme-select">
+                    <option value="vivid">Vivid</option>
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    <option value="neon">Neon</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Shield</h2>
+            <div class="toggle-row">
+                <span>Show shield icon</span>
+                <label class="switch">
+                    <input type="checkbox" id="shield-toggle" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">This site</h2>
+            <div class="toggle-row">
+                <span id="site-label">Loading current site…</span>
+                <label class="switch">
+                    <input type="checkbox" id="site-toggle" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <p id="status-text" class="status-text">Detecting status...</p>
+        </section>
+
+        <footer class="footer">
+            <span class="version" id="version-label"></span>
+            <button id="reload-btn" class="button button-outline">Reload tab</button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

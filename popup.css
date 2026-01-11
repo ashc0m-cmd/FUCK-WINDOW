@@ -1,0 +1,338 @@
+:root{
+  --color - bg: #0b0b0d;
+  --color - card: #14141a;
+  --color - primary: #ff006e;
+  --color - secondary: #8338ec;
+  --color - accent: #3a86ff;
+  --color - text: #ffffff;
+  --color - muted: #8a8fa3;
+  --color - border: #262633;
+  --radius - lg: 12px;
+  --radius - md: 8px;
+  --radius - pill: 999px;
+  --shadow - soft: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body{
+  margin : 0;
+  padding : 0;
+  width: 340px;
+  background: radial - gradient(circle at top, #191926 0, #050509 65 %);
+  color: var(--color - text);
+  font - family: system - ui, -apple - system, BlinkMacSystemFont, "Segoe UI", sans - serif;
+}
+
+.popup{
+  padding: 12px 14px 10px;
+  box - sizing: border - box;
+}
+
+/* Header */
+
+.popup - header{
+  display: flex;
+  align - items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: linear - gradient(135deg, #171722, #111118);
+  border - radius: var(--radius - lg);
+  box - shadow: var(--shadow - soft);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.shield - wrapper{
+  width: 40px;
+  height: 40px;
+  border - radius: 50 %;
+  background: radial - gradient(circle at 30 % 0, #ffbe0b, #ff006e 50 %, #3a86ff 100 %);
+  display: flex;
+  align - items: center;
+  justify - content: center;
+  box - shadow: 0 0 20px rgba(255, 0, 110, 0.6);
+}
+
+.shield - icon{
+  width: 22px;
+  height: 26px;
+  background: url("icons/shield.png") center / contain no - repeat;
+  filter: drop - shadow(0 0 6px rgba(0, 0, 0, 0.7));
+}
+
+.shield - active{
+  animation: shieldPulse 2.4s infinite ease - in - out;
+}
+
+.shield - inactive{
+  filter: grayscale(0.9) opacity(0.5);
+  animation: none;
+}
+
+@keyframes shieldPulse{
+  0 % {
+    transform: scale(1);
+    filter: drop - shadow(0 0 4px rgba(255, 0, 110, 0.6));
+  }
+  50 % {
+    transform: scale(1.08);
+    filter: drop - shadow(0 0 12px rgba(255, 0, 110, 0.8));
+  }
+  100 % {
+    transform: scale(1);
+    filter: drop - shadow(0 0 4px rgba(255, 0, 110, 0.6));
+  }
+}
+
+.title - block{
+  display: flex;
+  flex - direction: column;
+  gap: 2px;
+}
+
+.title{
+  margin : 0;
+  font - size: 16px;
+  letter - spacing: 0.03em;
+}
+
+.subtitle{
+  margin : 0;
+  font - size: 11px;
+  color: var(--color - muted);
+}
+
+/* Sections */
+
+.section{
+  margin - top: 10px;
+  padding: 10px 12px;
+  background: var(--color - card);
+  border - radius: var(--radius - md);
+  border: 1px solid var(--color - border);
+}
+
+.section - title{
+  margin: 0 0 8px;
+  font - size: 12px;
+  color: var(--color - muted);
+  text - transform: uppercase;
+  letter - spacing: 0.08em;
+}
+
+.field{
+  display: flex;
+  flex - direction: column;
+  gap: 4px;
+}
+
+.field label{
+  font - size: 12px;
+  color: var(--color - muted);
+}
+
+select{
+  border - radius: 6px;
+  border: 1px solid var(--color - border);
+  padding: 4px 8px;
+  font - size: 13px;
+  background: #101017;
+  color: var(--color - text);
+}
+
+/* Toggles */
+
+.toggle - row{
+  display: flex;
+  align - items: center;
+  justify - content: space - between;
+  gap: 10px;
+  font - size: 13px;
+}
+
+.switch {
+position: relative;
+display: inline - block;
+width: 36px;
+height: 18px;
+}
+
+.switch input {
+    opacity : 0;
+    width : 0;
+    height : 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top : 0;
+  left : 0;
+  right : 0;
+  bottom : 0;
+  background - color: #44475a;
+  transition: 0.3s;
+  border - radius: var(--radius - pill);
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background - color: #f8f8f2;
+  transition: 0.3s;
+  border - radius: 50 %;
+}
+
+input:checked + .slider{
+  background: linear - gradient(135deg, var(--color - primary), var(--color - accent));
+}
+
+input:checked + .slider : before{
+  transform: translateX(18px);
+}
+
+/* Status & footer */
+
+.status - text{
+  margin - top: 6px;
+  font - size: 11px;
+  color: var(--color - muted);
+}
+
+.footer{
+  margin - top: 10px;
+  padding: 6px 10px 2px;
+  display: flex;
+  align - items: center;
+  justify - content: space - between;
+  font - size: 11px;
+  color: var(--color - muted);
+}
+
+.button{
+  border - radius: var(--radius - pill);
+  padding: 4px 10px;
+  font - size: 11px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button - outline{
+  background: transparent;
+  border: 1px solid var(--color - border);
+  color: var(--color - text);
+}
+
+.button - outline:hover{
+  border - color: var(--color - accent);
+  color: var(--color - accent);
+}
+using System;
+using System.IO;
+using System.Text;
+using System.Text.Json;
+
+class Program {
+    static void Main() {
+        var stdin = Console.OpenStandardInput();
+        var stdout = Console.OpenStandardOutput();
+        var logPath = Path.Combine(Path.GetTempPath(), "com.example.nativehost.log");
+
+        try {
+            while (true) {
+                byte [] lenBytes = new byte[4];
+                int readLen = ReadExact(stdin, lenBytes, 0, 4);
+                if (readLen == 0) return;
+
+                // EOF if (readLen < 4) {
+                    File .AppendAllText(logPath, $"{DateTime.UtcNow:o} Short length read: {readLen}{Environment.NewLine}");
+                    return;
+                }
+
+                int payloadLen = BitConverter.ToInt32(lenBytes, 0);
+
+                if (payloadLen <= 0) {
+                    File .AppendAllText(logPath, $"{DateTime.UtcNow:o} Invalid payload length: {payloadLen}{Environment.NewLine}");
+                    continue;
+                }
+
+                byte [] buffer = new byte[payloadLen];
+                int got = ReadExact(stdin, buffer, 0, payloadLen);
+
+                if (got < payloadLen) {
+                    File .AppendAllText(logPath, $"{DateTime.UtcNow:o} Short payload read: expected={payloadLen} got={got}{Environment.NewLine}");
+                    return;
+                }
+
+                // Strip UTF-8 BOM if present int offset = 0;
+                if (buffer.Length >= 3 && buffer[0] == 0xEF && buffer[1] == 0xBB && buffer[2] == 0xBF) offset = 3;
+                string message = Encoding.UTF8.GetString(buffer, offset, buffer.Length - offset);
+
+                // Debug info (first bytes + string preview)
+                try {
+                    File .AppendAllText(logPath, $"{DateTime.UtcNow:o} Received {payloadLen} bytes; first16: {BitConverter.ToString(buffer, 0, Math.Min(16, buffer.Length))}{Environment.NewLine}" + $"{DateTime.UtcNow:o} As string (first 500): {message.Substring(0, Math.Min(500, message.Length))}{Environment.NewLine}");
+                }
+
+                catch { /* best-effort logging */
+                }
+
+                // Parse JSON safely JsonDocument doc;
+
+                try {
+                    doc = JsonDocument.Parse(message);
+                }
+
+                catch (Exception ex) {
+                    File .AppendAllText(logPath, $"{DateTime.UtcNow:o} JSON parse error: {ex.Message}{Environment.NewLine}");
+                    continue;
+                }
+
+                using (doc) {
+                    // Example response - replace with your logic string responseJson = JsonSerializer.Serialize(new { text = "pong" });
+                    byte [] responseBytes = Encoding.UTF8.GetBytes(responseJson);
+                    byte [] responseLen = BitConverter.GetBytes(responseBytes.Length);
+                    stdout .Write(responseLen, 0, responseLen.Length);
+                    stdout .Write(responseBytes, 0, responseBytes.Length);
+                    stdout .Flush();
+                }
+            }
+        }
+
+        catch (Exception ex) {
+            try {
+                File .AppendAllText(logPath, $"{DateTime.UtcNow:o} Fatal error: {ex}{Environment.NewLine}");
+            }
+
+            catch {
+            }
+        }
+    }
+
+    static int ReadExact(Stream s, byte[] buffer, int offset, int count) {
+        int total = 0;
+
+        while (total < count) {
+            int n = s.Read(buffer, offset + total, count - total);
+            if (n <= 0) break;
+            total += n;
+        }
+
+        return total;
+    }
+
+    using System;
+    using System.Runtime.InteropServices;
+    using Microsoft.VisualStudio [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)] [Guid("g95_7ki1fUCmP8fejTWOMw")] public sealed class MyPackage : AsyncPackage
+
+{
+    protected override async System.Threading.Tasks.Task InitializeAsync( System.Threading.CancellationToken cancellationToken, IProgress<ServiceProgressData> progress) {
+        await base.InitializeAsync(cancellationToken, progress);
+        // initialization logic (menu command registration, etc.)
+    }
+}
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
+Console.WriteLine("The current time is " + DateTime.Now);

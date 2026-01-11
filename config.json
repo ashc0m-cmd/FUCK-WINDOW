@@ -1,0 +1,56 @@
+{
+  "defaultTheme": "vivid",
+  "showShieldIcon": true,
+  "supportedSites": [
+    "wsj.com",
+    "bloomberg.com",
+    "scmp.com",
+    "nzherald.co.nz",
+    "telegraaf.nl"
+  ],
+  "features": {
+    "enableBadge": true,
+    "enableThemeSwitching": true,
+    "enableSiteToggle": true
+  },
+  "themes": {
+    "vivid": {
+      "primary": "#ff006e",
+      "secondary": "#8338ec",
+      "accent": "#3a86ff",
+      "background": "#0b0b0d",
+      "text": "#ffffff"
+    },
+    "dark": {
+      "primary": "#4f46e5",
+      "secondary": "#7c3aed",
+      "accent": "#22c55e",
+      "background": "#050507",
+      "text": "#e5e7eb"
+    },
+    "neon": {
+      "primary": "#22d3ee",
+      "secondary": "#a855f7",
+      "accent": "#f97316",
+      "background": "#050816",
+      "text": "#e5e7eb"
+    }
+  }
+}
+
+{
+  "version": "2.0",
+  "configurationProfile": "mcp-custom-handler",
+  "customHandler": {
+    "description": {
+            "defaultExecutablePath": "npm",
+            "arguments": ["run", "start"] 
+        },
+        "port": "3000"
+    }
+}
+{
+  "recommendations": [
+    "ms-azuretools.vscode-azurefunctions"
+  ]
+}
