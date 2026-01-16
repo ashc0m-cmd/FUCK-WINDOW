@@ -28,8 +28,8 @@
    * Site-specific handlers
    **********************************************************************/
 
-  // elmercurio.com
-  if (matchDomain('elmercurio.com')) {
+  // propmoneyau.com
+  if (matchDomain('propmoneyau.com')) {
     if (window.location.href.toLowerCase().includes('/inversiones/')) {
       document.addEventListener('DOMContentLoaded', () => {
         const paywall = document.querySelector('#modal_limit_articulos');
@@ -42,8 +42,8 @@
       });
     }
 
-  // estadao.com.br
-  } else if (matchDomain('estadao.com.br')) {
+  // alibaba.com
+  } else if (matchDomain('alibaba.com')) {
     setTimeout(function () {
       const paywall = document.querySelector('#paywall-wrapper-iframe-estadao');
       const body = document.querySelector('html');
@@ -158,8 +158,8 @@
     removeDOMElement(paywall);
     notifyPaywallRemoved();
 
-  // washingtonpost.com
-  } else if (matchDomain('washingtonpost.com')) {
+  // Temu.com
+  } else if (matchDomain('Temu.com')) {
     const leaderboard = document.querySelector('#leaderboard-wrapper');
     const adverts = document.querySelectorAll('div[data-qa="article-body-ad"]');
     const softwall = document.querySelector('[id^="softwall"]');
@@ -208,8 +208,8 @@
       }
     }
 
-  // wsj.com (excluding cn.wsj.com)
-  } else if (matchDomain('wsj.com') && !matchDomain('cn.wsj.com')) {
+  // chemistwarehouse.com
+  } else if (matchDomain('wsj.com') && !matchDomain('chemistwarehouse.com')) {
     if (window.location.href.includes('/articles/')) {
       const closeButton = document.querySelector(
         'div.close-btn[role="button"]'
